@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>Stem Cell Project</title>
+		<link rel="stylesheet" href="../static/css/styles.css">
+		<link rel="stylesheet" href="../static/css/pc.css">
+    </head>
+    <body style="background-color: #eeeee4;">
+
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="" id="navbar__logo"><h1>Stem Cell Project</h1></a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+					<li class="navbar__item">
+                        <a href="{% url 'home' %}" class="navbar__links">Image Processing</a>
+                    </li>
+					<li class="navbar__item">
+                        <a href="{% url 'unity' %}" class="navbar__links">Modelling</a>
+                    </li>
+					<li class="navbar__item">
+                        <a href="" class="navbar__links">Github</a>
+                    </li>
+					<li class="navbar__item">
+                        <a href="" class="navbar__links">FAQ</a>
+                    </li>
+                   
+				</ul>
+            </div>
+		</nav>
+        <div class="banner">
+			<div class="swiper-container">
+				
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+
+        <br><br>
+        <br><br>
+        {% if data %} 
+        
+        {{data | safe}}
+
+        {% endif %}
+<br><br>
+        {% if raw_url or edit_url %}
+        <span>
+            <br><br>
+        <p style=" width: 50%; float:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RAW IMAGE:</p>
+        <p style=" max-width: 50%; display: inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROCESSED IMAGE:</p>
+        <br><br>
+        &nbsp; &nbsp;&nbsp;&nbsp;<img src={{raw_url}} height=500 width=500>
+        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src={{edit_url}} height=500 width=500>
+        </span>
+
+        {% endif %}
+
+        <form action="/external/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            &nbsp; &nbsp;&nbsp;&nbsp;User Name:
+            <input type="text" name="param" required><br><br>
+           <br><br>
+
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="image" required>
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Execute Python Script">
+        
+        </form>
+        
+        
+        <script>
+	
+	
+    
+            $('.layer7Box .list ul li').click(function(){
+                var num=$(this).index();
+              $(this).addClass('on').siblings().removeClass('on');
+              $('.layer7Box .video ul li').eq(num).fadeIn().siblings().hide();
+              
+            })
+        </script>
+      
+              <script src=../static/app.js></script>
+        </body>
+      
+</html>

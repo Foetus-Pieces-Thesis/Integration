@@ -1,0 +1,112 @@
+
+    body {
+        .layer2Box {
+            padding: 25px 30px;
+            .main {
+                width: 100%;
+                padding-bottom: r(50px);
+                overflow-x: auto;
+                padding: 10px 0;
+                box-sizing: border-box;
+                
+                &::-webkit-scrollbar {
+                height: 4px;
+                background: transparent;
+                }
+                
+                &::-webkit-scrollbar-thumb {
+                height: 4px;
+                border-radius: 4px;
+                background: #555;
+                }
+
+                &::-webkit-scrollbar-button {
+                display: none;
+                background: transparent;
+                background-color: transparent;
+                }
+                .mainCon {
+                margin-top: 15%;
+                width: max-content;
+                .list {
+                    display: flex;
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    padding-left: r(10px);
+                    &.next {
+                    padding-left: r(150px);
+                    }
+                    .item {
+                    margin: 0 5px;
+                    width: r(286px);
+                    box-sizing: content-box;
+                    flex: none;
+                    & + .item {
+                        padding-left: r(112px);
+                    }
+                    .pic {
+                        zoom:0.5;
+                    }
+                    }
+                }
+                }
+            }
+        }
+
+        .layer6Box {
+            .main {
+                width: 100%;
+                padding-bottom: r(50px);
+                overflow-x: auto;
+                padding: 10px 0;
+                box-sizing: border-box;
+                
+                &::-webkit-scrollbar {
+                height: 4px;
+                background: transparent;
+                }
+                
+                &::-webkit-scrollbar-thumb {
+                height: 4px;
+                border-radius: 4px;
+                background: #555;
+                }
+
+                &::-webkit-scrollbar-button {
+                display: none;
+                background: transparent;
+                background-color: transparent;
+                }
+
+                .mainCon {
+                margin-top: 15%;
+                width: max-content;
+
+                .list {
+                    display: flex;
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    padding-left: r(10px);
+                    &.next {
+                    padding-left: r(150px);
+                    }
+                    .item {
+                    margin: 0 5px;
+                    width: r(286px);
+                    box-sizing: content-box;
+                    flex: none;
+                    & + .item {
+                        padding-left: r(112px);
+                    }
+                    .pic {
+                        zoom:0.5;
+                        border-radius: 3rem;
+                    }
+                    }
+                }
+                }
+            }
+        }
+    }
